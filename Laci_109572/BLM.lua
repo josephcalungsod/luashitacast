@@ -8,11 +8,44 @@ local rdmSJMaxMP = 923 -- The Max MP you have when /rdm in your idle set
 
 local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra and StoneskinExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
 
-local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
-local republic_circlet = true
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
+    Back = 'Warlock\'s Mantle',
+}
+local republic_circlet = {
+    Head = 'Republic Circlet',
+}
+local opuntia_hoop = {
+    -- Ring1 = 'Opuntia Hoop',
+}
+local diabolos_pole = {
+    Main = 'Diabolos\'s Pole',
+}
+local sorcerers_ring = {
+    Ring1 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring to work as well in gcmage.lua
+}
+local sorcerers_tonban = {
+    Legs = 'Src. Tonban +1',
+}
 
-local opuntia_hoop = false
-local opuntia_hoop_slot = 'Ring1'
+-- Disabled on horizon_safe_mode
+local sorcerers_earring_hp_threshold = 360 -- HP at which Sorcerer's Earring set is equipped
+local sorcerers_earring = { -- 1440
+    -- Main = 'Terra\'s Staff',
+    -- Ammo = 'Hedgehog Bomb',
+    -- Head = 'Genie Tiara',
+    -- Neck = 'Pch. Collar',
+    -- Ear1 = 'Cassie Earring',
+    -- Ear1 = 'Sorcerer\'s Earring',
+    -- Body = 'Src. Coat +1',
+    -- Hands = 'Garden Bangles',
+    -- Ring1 = 'Bomb Queen Ring',
+    -- Ring2 = 'Sattva Ring',
+    -- Back = 'Gigant Mantle',
+    -- Waist = 'Ocean Sash',
+    -- Legs = 'Igqira Lappas',
+    -- Feet = 'Marine M Boots',
+}
 
 local sets = {
     Idle = {
@@ -552,7 +585,17 @@ Everything below can be ignored.
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
+sets.warlocks_mantle = warlocks_mantle
+sets.republic_circlet = republic_circlet
+sets.opuntia_hoop = opuntia_hoop
+sets.diabolos_pole = diabolos_pole
+sets.sorcerers_ring = sorcerers_ring
+sets.sorcerers_tonban = sorcerers_tonban
+sets.sorcerers_earring = sorcerers_earring
+profile.Sets = gcmage.AppendSets(sets)
+
 profile.HandleAbility = function()
+    gcmage.DoAbility()
 end
 
 profile.HandleItem = function()
@@ -560,9 +603,11 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gcmage.DoPreshot(sets.Preshot, gFunc.Combine(sets.Preshot, sets.Ranged), snapShotValue)
 end
 
 profile.HandleMidshot = function()
+    gcmage.DoMidshot(sets, gFunc.Combine(sets.Preshot, sets.Ranged))
 end
 
 profile.HandleWeaponskill = function()
@@ -585,7 +630,7 @@ profile.HandleCommand = function(args)
         gcdisplay.AdvanceToggle('Extra')
         gcinclude.Message('Extra', gcdisplay.GetToggle('Extra'))
     else
-        gcmage.DoCommands(args)
+        gcmage.DoCommands(args, sets)
     end
 
     if (args[1] == 'horizonmode') then
@@ -594,24 +639,33 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, nil, rdmSJMaxMP, nil)
+    gcmage.DoDefault(sets, ninSJMaxMP, whmSJMaxMP, nil, rdmSJMaxMP, nil)
 
     local spikes = gData.GetBuffCount('Blaze Spikes') + gData.GetBuffCount('Shock Spikes') + gData.GetBuffCount('Ice Spikes')
     local isPhysical = gcdisplay.IdleSet == 'Normal' or gcdisplay.IdleSet == 'Alternate' or gcdisplay.IdleSet == 'DT'
-    if (opuntia_hoop and spikes > 0 and isPhysical) then
-        gFunc.Equip(opuntia_hoop_slot, 'Opuntia Hoop')
+    if (spikes > 0 and isPhysical) then
+        gFunc.EquipSet('opuntia_hoop')
     end
+
+    local player = gData.GetPlayer()
+    if (not gcinclude.horizon_safe_mode) then
+        if (player.HP <= sorcerers_earring_hp_threshold) then
+            gFunc.EquipSet('sorcerers_earring')
+        end
+    end
+
+    gcmage.DoDefaultOverride()
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()
     local player = gData.GetPlayer()
-    if (player.SubJob == 'RDM' and warlocks_mantle) then
-        gcmage.DoPrecast(fastCastValue + 0.02)
-        gFunc.Equip('Back', 'Warlock\'s Mantle')
+    if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
+        gcmage.DoPrecast(sets, fastCastValue + 0.02, 0)
+        gFunc.EquipSet('warlocks_mantle')
     else
-        gcmage.DoPrecast(fastCastValue)
+        gcmage.DoPrecast(sets, fastCastValue, 0)
     end
 end
 
@@ -622,15 +676,15 @@ profile.HandleMidcast = function()
 
     local player = gData.GetPlayer()
     local action = gData.GetAction()
-    if (republic_circlet == true) then
+    if (republic_circlet.Head) then
         if (action.Skill == 'Elemental Magic' and gcdisplay.GetCycle('Mode') == 'Potency') then
             if (gcdisplay.GetToggle('Extra') and player.MP >= nukeExtraThreshold) then
                 do return end
             end
             if (not ElementalDebuffs:contains(action.Name)) then
-                if (conquest:GetInsideControl()) then
-                    print(chat.header('GCMage'):append(chat.message('In Region - Using Republic Circlet')))
-                    gFunc.Equip('Head', 'Republic Circlet')
+                if (conquest:GetInsideControl() and gcdisplay.GetToggle('HNM') == false and gcdisplay.GetCycle('Mode') ~= 'Accuracy') then
+                    print(chat.header('LAC - BLM'):append(chat.message('In Region - Using Republic Circlet')))
+                    gFunc.EquipSet('republic_circlet')
                 end
             end
         end
