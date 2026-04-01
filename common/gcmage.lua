@@ -6,7 +6,7 @@ local minimumBuffer = 0.4
 local packetDelay = 0.25
 
 -- Set to true if you want messages every time Mst.Cst. Bracelets are used.
-local log_conquest = false
+local log_conquest = true
 
 -- This uses the BLM-advanced.lua to calculate more precise Yellow sets. Do not use this unless you know what you're doing.
 local blm_advanced = false
@@ -15,7 +15,7 @@ local blm_advanced = false
 local dark_and_abyssal_earrings = true
 
 -- Set to true if you wish to always use elemental staves or claustrum for Elemental DoTs.
-local use_staves_for_elemental_debuffs = false
+local use_staves_for_elemental_debuffs = true
 
 -- Set to 0 to 50 depending on the mp lost when using medicine ring or virology ring on IdleMaxMP set.
 local medicine_ring_mp_deficit = 50
@@ -63,13 +63,13 @@ local karin_obi = {
     Waist = 'Karin Obi',
 }
 local dorin_obi = {
-    -- Waist = 'Dorin Obi',
+    Waist = 'Dorin Obi',
 }
 local suirin_obi = {
-    -- Waist = 'Suirin Obi',
+    Waist = 'Suirin Obi',
 }
 local furin_obi = {
-    -- Waist = 'Furin Obi',
+    Waist = 'Furin Obi',
 }
 local hyorin_obi = {
     Waist = 'Hyorin Obi',
@@ -91,7 +91,7 @@ local master_casters_bracelets = {
     Hands = 'Mst.Cst. Bracelets',
 }
 local wizards_mantle = {
-    -- Back = 'Wizard\'s Mantle',
+    Back = 'Wizard\'s Mantle',
 }
 local republic_gold_medal = { -- Note: Disabled for BRD
     Neck = 'Rep.Gold Medal',
@@ -100,7 +100,7 @@ local diabolos_earring = { -- Forces usage of this for NukeACC, EnfeebleACC, and
     -- Ear2 = 'Diabolos\'s Earring',
 }
 local diabolos_ring = {
-    Ring2 = 'Diabolos\'s Ring',
+    -- Ring2 = 'Diabolos\'s Ring',
 }
 local ice_ring = {
     -- Ring2 = 'Ice Ring',
@@ -109,7 +109,7 @@ local water_ring = {
     -- Ring2 = 'Water Ring',
 }
 local overlords_ring = {
-    Ring1 = 'Overlord\'s Ring',
+    -- Ring1 = 'Overlord\'s Ring',
 }
 
 -- For Meleeing on WHM, BRD or RDM. Fenrir's Earring will be prioritised over Diabolos's Earring if using the same slot
@@ -121,7 +121,7 @@ local tp_diabolos_earring = {
 }
 
 -- Set this to true to confirm that you actually read the README.md and set up the equipment listed above correctly
-local i_can_read_and_follow_instructions_test = false
+local i_can_read_and_follow_instructions_test = true
 
 --[[
 --------------------------------
