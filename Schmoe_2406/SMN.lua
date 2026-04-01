@@ -7,6 +7,39 @@ local evokers_boots = false
 
 local cureMP = 1047 -- Cure set max MP
 
+-- Disabled on horizon_safe_mode
+local conjurersRingForced = true -- Default /cring value
+local conjurersRingMaxHP = 737
+
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local carbuncles_cuffs = {
+    -- Hands = 'Carbuncle\'s Cuffs',
+}
+local evokers_boots = {
+    -- Feet = 'Evoker\'s Boots',
+}
+local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ dependant
+    Back = 'Warlock\'s Mantle',
+}
+local carbuncle_mitts = {
+    Hands = 'Carbuncle Mitts',
+}
+local yinyang_robe = {
+    Body = 'Yinyang Robe',
+}
+local summoners_doublet = {
+    Body = 'Smn. Doublet +1',
+}
+local summoners_horn = {
+    Head = 'Summoner\'s Horn',
+}
+local conjurers_ring = {
+    Ring1 = 'Conjurer\'s Ring',
+}
+local bahamuts_staff = {
+    -- Main = 'Bahamut\'s Staff',
+}
+
 local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
@@ -61,6 +94,11 @@ local sets = {
     },
     Movement = {
         Feet = 'Herald\'s Gaiters',
+    },
+    Movement_TP = {},
+
+    Perpetuation = { -- There is no point in using this set over an Idle set except for equipping Penance Robe
+        -- Body = 'Penance Robe',
     },
 
     DT = {
@@ -269,6 +307,7 @@ local sets = {
     EnfeeblingACC = {},
 
     Divine = {},
+    Banish = {},
     Dark = {},
 
     Nuke = {},
@@ -315,29 +354,79 @@ local sets = {
     },
 
     BP = {
-        Head = 'Summoner\'s Horn',
-        Body = 'Yinyang Robe',
-        Ring1 = { Name = 'Tamas Ring', Priority = 100 },
-        Ring2 = 'Evoker\'s Ring',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Summoner\'s Horn', -- evokers?
+        Neck = 'Smn. Torque',
+        Body = 'Yinyang Robe',        
         Ear1 = 'Loquac. Earring',
-        -- Ear2 = 'Magnetic Earring',
-        Back = 'Astute Cape',        
+        -- Ear2 = 'Magnetic Earring',        
         Hands = 'Summoner\'s Brcr.',
         -- Hands = 'Austere Cuffs',
-        -- Feet = 'Austere Sabots',
+        Ring1 = { Name = 'Tamas Ring', Priority = 100 },
+        Ring2 = 'Evoker\'s Ring',
+        -- Feet = 'Austere Sabots',        
+        Back = 'Astute Cape',
+        Waist = { Name = 'Hierarch Belt', Priority = 100 },  
         Legs = 'Evoker\'s Spats',
-        Feet = 'Summoner\'s Pgch.',
-        Ammo = 'Hedgehog Bomb',
-        Waist = { Name = 'Hierarch Belt', Priority = 100 },
-        Neck = 'Smn. Torque',
+        Feet = 'Summoner\'s Pgch.', --nashira?        
     },
-    BP_Magical = {-- skill
+    BP_Magical = {
+        -- Head = 'Buffalo Helm',
+    },
+    BP_Magical_Potency = {
+        -- Feet = 'Shep. Boots', -- Increases damage at the cost of accuracy
     },
     BP_Physical = {-- accuracy
         Legs = 'Evoker\'s Spats',
+        -- Feet = 'Summoner\'s Pgch.', -- Increases damage at the cost of accuracy
+    },
+    BP_Physical_Crit = {
+        Body = 'Smn. Doublet +1',
     },
     BP_Hybrid = {
+        -- Feet = 'Shep. Boots', -- Increases damage at the cost of accuracy
     },
+    BP_Healing = { -- This set is pointless unless your server penalizes healing BPs by attributing amount healed enmity to you.
+    },
+
+    TP = {
+        Ring1 = 'Jelly Ring',
+    },
+    TP_Mjollnir_Haste = {},
+    TP_HighAcc = {
+        Ring1 = { Name = 'Bomb Queen Ring', Priority = 100 },
+    },
+
+    WS = {},
+    WS_HighAcc = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
+
+    ConjurersRingHPDown = { -- 730 - Set to force HP below conjurersRingMaxHP. Note that /WHM provides regen so this is preferably at least 10 or more below.
+        Main = 'Terra\'s Staff',
+        Ammo = 'Hedgehog Bomb',
+        Head = 'Zenith Crown +1',
+        Neck = 'Jeweled Collar +1',
+        Ear1 = 'Novia Earring',
+        Ear2 = 'Hades Earring +1',
+        Body = 'Yinyang Robe',
+        Hands = 'Zenith Mitts +1',
+        Ring1 = 'Serket Ring',
+        Ring2 = 'Ether Ring',
+        Back = 'Umbra Cape',
+        Waist = 'Penitent\'s Rope',
+        Legs = 'Evk. Spats +1',
+        Feet = 'Rostrum Pumps',
+    },
+
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {
+        -- Ammo = 'Pebble',
+    },
+
+    VileElixir = {},
 }
 profile.Sets = sets
 
@@ -355,17 +444,36 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing'}
-local SmnHealing = T{'Healing Ruby','Healing Ruby II','Whispering Wind','Spring Water'}
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
+
+sets.carbuncles_cuffs = carbuncles_cuffs
+sets.evokers_boots = evokers_boots
+sets.warlocks_mantle = warlocks_mantle
+sets.carbuncle_mitts = carbuncle_mitts
+sets.yinyang_robe = yinyang_robe
+sets.summoners_doublet = summoners_doublet
+sets.summoners_horn = summoners_horn
+sets.conjurers_ring = conjurers_ring
+sets.bahamuts_staff = bahamuts_staff
+profile.Sets = gcmage.AppendSets(sets)
+
+-- Includes Chaotic Strike and Shock Strike in SmnSkill to maximize stun chance
+local SmnSkill = T{'Shining Ruby','Glittering Ruby','Crimson Howl','Inferno Howl','Frost Armor','Crystal Blessing','Aerial Armor','Hastega II','Fleet Wind','Hastega','Earthen Ward','Earthen Armor','Rolling Thunder','Lightning Armor','Soothing Current','Ecliptic Growl','Heavenward Howl','Ecliptic Howl','Noctoshield','Dream Shroud','Altana\'s Favor','Reraise','Reraise II','Reraise III','Raise','Raise II','Raise III','Wind\'s Blessing','Spring Water','Shock Strike','Chaotic Strike'}
+local SmnHealing = T{'Healing Ruby','Healing Ruby II','Whispering Wind'}
 local SmnMagical = T{'Searing Light','Meteorite','Holy Mist','Inferno','Fire II','Fire IV','Meteor Strike','Conflag Strike','Diamond Dust','Blizzard II','Blizzard IV','Heavenly Strike','Aerial Blast','Aero II','Aero IV','Wind Blade','Earthen Fury','Stone II','Stone IV','Geocrush','Judgement Bolt','Thunder II','Thunder IV','Thunderstorm','Thunderspark','Tidal Wave','Water II','Water IV','Grand Fall','Howling Moon','Lunar Bay','Ruinous Omen','Somnolence','Nether Blast','Night Terror','Level ? Holy'}
 local SmnEnfeebling = T{'Diamond Storm','Sleepga','Shock Squall','Slowga','Tidal Roar','Pavor Nocturnus','Ultimate Terror','Nightmare','Mewing Lullaby','Eerie Eye'}
 local SmnHybrid = T{'Flaming Crush','Burning Strike'}
+local SmnCrit = T{'Predator Claws','Claw'}
 
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+local nextConjurersRingCheck = 0
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
-    gFunc.EquipSet('BP_Delay')
+
+    local action = gData.GetAction()
+    if (string.match(action.Type, 'Blood')) then
+        gFunc.EquipSet('BP_Delay')
+    end
 end
 
 profile.HandleItem = function()
@@ -373,25 +481,46 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gcmage.DoPreshot(sets.Preshot, gFunc.Combine(sets.Preshot, sets.Ranged), snapShotValue)
 end
 
 profile.HandleMidshot = function()
+    gcmage.DoMidshot(sets, gFunc.Combine(sets.Preshot, sets.Ranged))
 end
 
 profile.HandleWeaponskill = function()
+    gFunc.EquipSet(sets.WS)
+    if (gcdisplay.GetCycle('TP') == 'HighAcc') then
+        gFunc.EquipSet('WS_HighAcc')
+    end
+    gcmage.DoFenrirsEarring()
 end
 
 profile.OnLoad = function()
+    if (not gcinclude.horizon_safe_mode) then
+        gcinclude.SetAlias(T{'cring'})
+        gcdisplay.CreateToggle('C-Ring', conjurersRingForced)
+    end
+
     gcmage.Load()
     profile.SetMacroBook()
 end
 
 profile.OnUnload = function()
     gcmage.Unload()
+
+    if (not gcinclude.horizon_safe_mode) then
+        gcinclude.ClearAlias(T{'cring'})
+    end
 end
 
 profile.HandleCommand = function(args)
-    gcmage.DoCommands(args)
+    if (args[1] == 'cring') then
+        gcdisplay.AdvanceToggle('C-Ring')
+        gcinclude.Message('Conjurer\'s Ring', gcdisplay.GetToggle('C-Ring'))
+    else
+        gcmage.DoCommands(args, sets)
+    end
 
     if (args[1] == 'horizonmode') then
         profile.HandleDefault()
@@ -403,42 +532,61 @@ profile.HandleDefault = function()
     if (petAction ~= nil) then
         gFunc.EquipSet('BP')
 
-        -- Era provides near zero gear options so almost all of these just default to the default BP set or Magical
         if (SmnSkill:contains(petAction.Name)) then
             -- Do Nothing
         elseif (SmnMagical:contains(petAction.Name)) then
             gFunc.EquipSet(sets.BP_Magical)
+            gFunc.EquipSet(sets.BP_Magical_Potency)
         elseif (SmnHybrid:contains(petAction.Name)) then
+            gFunc.EquipSet(sets.BP_Physical)
             gFunc.EquipSet(sets.BP_Hybrid)
         elseif (SmnHealing:contains(petAction.Name)) then
-            -- Do Nothing
+            gFunc.EquipSet(sets.BP_Healing)
         elseif (SmnEnfeebling:contains(petAction.Name)) then
             gFunc.EquipSet(sets.BP_Magical)
         else
             gFunc.EquipSet(sets.BP_Physical)
+            if (SmnCrit:contains(petAction.Name)) then
+                gFunc.EquipSet(sets.BP_Physical_Crit)
+            end
         end
     else
-        gcmage.DoDefault(nil, nil, nil, nil)
+        if (not gcinclude.horizon_safe_mode) then
+            local player = gData.GetPlayer()
+            if (gcdisplay.GetToggle('C-Ring') and player.HP >= conjurersRingMaxHP and gData.GetPet()) then
+                local time = os.clock()
+                if (time > nextConjurersRingCheck) then
+                    nextConjurersRingCheck = time + 3 -- only recheck again after 3 seconds to prevent spam
+                    gFunc.ForceEquipSet('ConjurersRingHPDown')
+                    gFunc.ForceEquipSet('Idle')
+                end
+            end
+        end
+
+        gcmage.DoDefault(sets, nil, nil, nil, nil, nil)
+        gcmage.DoDefaultOverride()
     end
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
 
 profile.HandlePrecast = function()
-    gcmage.DoPrecast(fastCastValue)
+    local player = gData.GetPlayer()
+    if (player.SubJob == 'RDM' and warlocks_mantle.Back) then
+        gcmage.DoPrecast(sets, fastCastValue + 0.02, 0)
+        gFunc.EquipSet('warlocks_mantle')
+    else
+        gcmage.DoPrecast(sets, fastCastValue, 0)
+    end
 
     local action = gData.GetAction()
     if (action.Skill == 'Summoning') then
-        if (carbuncles_cuffs) then
-            gFunc.Equip('Hands', 'Carbuncle\'s Cuffs')
-        end
-        if (evokers_boots) then
-            gFunc.Equip('Feet', 'Evoker\'s Boots')
-        end
+        gFunc.EquipSet('carbuncles_cuffs')
+        gFunc.EquipSet('evokers_boots')
     end
 end
 
 profile.HandleMidcast = function()
-    gcmage.DoMidcast(sets, cureMP, cureMP, cureMP, cureMP)
+    gcmage.DoMidcast(sets, cureMP, cureMP, cureMP, cureMP, cureMP)
 end
 
 return profile
