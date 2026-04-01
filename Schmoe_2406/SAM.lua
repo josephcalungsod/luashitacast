@@ -1,10 +1,17 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0% from gear
+local fastCastValue = 0.00 -- 0% from gear listed in Precast set
+local snapShotValue = 0.00 -- 0% from gear listed in Preshot set
 
--- Replace these with '' if you do not have them
-local myochin_kabuto = 'Myochin Kabuto'
-local saotome_kote = 'Saotome Kote'
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+
+-- Comment out the equipment within these sets if you do not have them or do not wish to use them
+local myochin_kabuto = {
+    Head = 'Myochin Kabuto',
+}
+local saotome_kote = {
+    Hands = 'Saotome Kote',
+}
 
 local sets = {
     Idle = {},
@@ -12,6 +19,7 @@ local sets = {
     Resting = {},
     Town = {},
     Movement = {},
+    Movement_TP = {},
 
     DT = {},
     MDT = { -- Shell IV provides 23% MDT
@@ -45,6 +53,7 @@ local sets = {
     LockSet3 = {},
 
     TP_LowAcc = {},
+    TP_Aftermath = {},
     TP_HighAcc = {},
     TP_Mjollnir_Haste = {},
 
