@@ -77,15 +77,17 @@ Everything below can be ignored.
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
+sets.myochin_kabuto = myochin_kabuto
+sets.saotome_kote = saotome_kote
+profile.Sets = gcmelee.AppendSets(sets)
+
 profile.HandleAbility = function()
+    gcmelee.DoAbility()
+
     local action = gData.GetAction()
     if (action.Name == 'Meditate') then
-        if (myochin_kabuto ~= '') then
-            gFunc.Equip('Head', myochin_kabuto)
-        end
-        if (saotome_kote ~= '') then
-            gFunc.Equip('Hands', saotome_kote)
-        end
+        gFunc.EquipSet('myochin_kabuto')
+        gFunc.EquipSet('saotome_kote')
     end
 end
 
@@ -94,9 +96,11 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gcmelee.DoPreshot(sets.Preshot, gFunc.Combine(sets.Preshot, sets.Ranged), snapShotValue)
 end
 
 profile.HandleMidshot = function()
+    gcmelee.DoMidshot(sets, gFunc.Combine(sets.Preshot, sets.Ranged))
 end
 
 profile.HandleWeaponskill = function()
@@ -126,7 +130,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmelee.DoDefault()
+    gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
     gcmelee.DoDefaultOverride()
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
 end
