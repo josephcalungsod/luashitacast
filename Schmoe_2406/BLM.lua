@@ -644,11 +644,11 @@ profile.HandleDefault = function()
     end
 
     local player = gData.GetPlayer()
-    if (not gcinclude.horizon_safe_mode) then
+    -- if (not gcinclude.horizon_safe_mode) then
         if (player.HP <= sorcerers_earring_hp_threshold) then
             gFunc.EquipSet('sorcerers_earring')
         end
-    end
+    -- end
 
     gcmage.DoDefaultOverride()
 
