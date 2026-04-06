@@ -4,7 +4,7 @@ local display_messages = true -- set to true if you want chat log messages to ap
 
 local load_stylist = true -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work
 
-local toggleDisplayHeadOnAbility = true
+local toggleDisplayHeadOnAbility = false
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local kingdom_aketon = {

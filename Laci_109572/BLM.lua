@@ -13,7 +13,7 @@ local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ 
     Back = 'Warlock\'s Mantle',
 }
 local republic_circlet = {
-    Head = 'Republic Circlet',
+    -- Head = 'Republic Circlet',
 }
 local opuntia_hoop = {
     -- Ring1 = 'Opuntia Hoop',
@@ -276,16 +276,17 @@ local sets = {
     Yellow = { -- This will override Precast if /lag is turned on or the spell casting time is too short. e.g. Tier 1: "Stone"
         Head = 'Zenith Crown',
         -- Ammo = 'Tiphia Sting',
-        Back = 'Blue Cape',
-        Ear1 = 'Loquac. Earring',
+        -- Back = 'Blue Cape',        
         -- Ear2 = 'Magnetic Earring',
-        Body = { Name = 'Black Cotehardie', Priority = 100 },        
+        -- Body = { Name = 'Black Cotehardie', Priority = 100 },        
         Hands = 'Zenith Mitts',
         -- Ring1 = 'Ether Ring',
         -- Ring2 = 'Serket Ring',
-        Neck = 'Checkered Scarf',
-        Waist = { Name = 'Penitent\'s Rope', Priority = -100 },
+        Neck = 'Checkered Scarf',        
         Legs = 'Zenith Slacks',
+        Ear1 = 'Loquac. Earring',
+
+        Waist = { Name = 'Penitent\'s Rope', Priority = -100 },
         Feet = 'Rostrum Pumps',
     },
     YellowHNM = {
@@ -648,11 +649,11 @@ profile.HandleDefault = function()
     end
 
     local player = gData.GetPlayer()
-    if (not gcinclude.horizon_safe_mode) then
+    -- if (not gcinclude.horizon_safe_mode) then
         if (player.HP <= sorcerers_earring_hp_threshold) then
             gFunc.EquipSet('sorcerers_earring')
         end
-    end
+    -- end
 
     gcmage.DoDefaultOverride()
 

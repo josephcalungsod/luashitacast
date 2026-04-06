@@ -48,6 +48,15 @@ local sets = {
     Ready_Physical = {},
     Ready_Magic = {},
     Call_Beast = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
+
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {},
+
+    VileElixir = {},
 }
 profile.Sets = sets
 

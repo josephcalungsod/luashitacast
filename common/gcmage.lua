@@ -3,7 +3,7 @@
 local minimumBuffer = 0.4
 
 -- Change this value to 0.4 if you do not use PacketFlow
-local packetDelay = 0.25
+local packetDelay = 0.4
 
 -- Set to true if you want messages every time Mst.Cst. Bracelets are used.
 local log_conquest = true

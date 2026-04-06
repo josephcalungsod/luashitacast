@@ -14,7 +14,7 @@ local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ 
     Back = 'Warlock\'s Mantle',
 }
 local republic_circlet = {
-    Head = 'Republic Circlet',
+    -- Head = 'Republic Circlet',
 }
 local opuntia_hoop = {
     -- Ring1 = 'Opuntia Hoop',
@@ -23,7 +23,7 @@ local diabolos_pole = {
     Main = 'Diabolos\'s Pole',
 }
 local sorcerers_ring = {
-    Ring1 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring to work as well in gcmage.lua
+    Ring2 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring to work as well in gcmage.lua
 }
 local sorcerers_tonban = {
     Legs = 'Src. Tonban +1',
@@ -263,14 +263,14 @@ local sets = {
         Feet = 'Rostrum Pumps',
     },
     Casting = {
-        Main = 'Hermit\'s Wand', -- 25
-        Sub = 'Hermit\'s Wand', -- 25
-        Head = 'Nashira Turban', -- 10
-        Neck = 'Willpower Torque', -- 5
-        Ear1 = 'Merman\'s Earring',
-        Ear2 = 'Magnetic Earring', -- 8
-        Waist = 'Druid\'s Rope', -- 10
-        Feet = 'Wizard\'s Sabots', -- 20
+        -- Main = 'Hermit\'s Wand', -- 25
+        -- Sub = 'Hermit\'s Wand', -- 25
+        -- Head = 'Nashira Turban', -- 10
+        -- Neck = 'Willpower Torque', -- 5
+        -- Ear1 = 'Merman\'s Earring',
+        -- Ear2 = 'Magnetic Earring', -- 8
+        -- Waist = 'Druid\'s Rope', -- 10
+        -- Feet = 'Wizard\'s Sabots', -- 20
     },
     SIRD = { -- Used on Stoneskin, Blink, Aquaveil and Utsusemi casts
         Main = 'Hermit\'s Wand', -- 25
@@ -367,20 +367,20 @@ local sets = {
         Feet = { Name = 'Errant Pigaches', Priority = 100 },
     },
     StoneskinExtra = {
-        Main = 'Kirin\'s Pole',
-        Ammo = 'Hedgehog Bomb',
-        Head = 'Zenith Crown',
-        Neck = 'Stone Gorget',
-        Ear1 = 'Loquac. Earring',
-        Ear2 = 'Cmn. Earring',
-        Body = 'Errant Hpl.',
-        Hands = 'Dvt. Mitts +1',
-        Ring1 = 'Aqua Ring',
-        Ring2 = 'Aqua Ring',
-        Back = 'Errant Cape',
-        Waist = 'Hierarch Belt',
-        Legs = 'Mahatma Slops',
-        Feet = 'Errant Pigaches',
+        -- Main = 'Kirin\'s Pole',
+        -- Ammo = 'Hedgehog Bomb',
+        -- Head = 'Zenith Crown',
+        -- Neck = 'Stone Gorget',
+        -- Ear1 = 'Loquac. Earring',
+        -- Ear2 = 'Cmn. Earring',
+        -- Body = 'Errant Hpl.',
+        -- Hands = 'Dvt. Mitts +1',
+        -- Ring1 = 'Aqua Ring',
+        -- Ring2 = 'Aqua Ring',
+        -- Back = 'Errant Cape',
+        -- Waist = 'Hierarch Belt',
+        -- Legs = 'Mahatma Slops',
+        -- Feet = 'Errant Pigaches',
     },
     Spikes = {
         Main = 'Kirin\'s Pole',
@@ -457,8 +457,8 @@ local sets = {
         Ear1 = 'Loquac. Earring',
         Body = 'Nashira Manteel',
         Hands = 'Nashira Gages',
-        Ring1 = 'Snow Ring',
-        Ring2 = 'Omniscient Ring',
+        Ring1 = 'Tamas Ring',
+        Ring2 = 'Snow Ring',
         Back = 'Merciful Cape',
         Waist = 'Swift Belt',
         Legs = 'Nashira Seraweels',
