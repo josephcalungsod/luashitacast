@@ -60,7 +60,7 @@ local sets = {
 
     VileElixir = {},
 }
-profile.Sets = sets
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 5')
