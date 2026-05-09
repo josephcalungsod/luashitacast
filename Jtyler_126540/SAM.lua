@@ -231,6 +231,9 @@ profile.HandleWeaponskill = function()
     if (action.Name == 'Tachi: Kaiten') then
         gFunc.EquipSet(sets.WS_Kaiten)
     end
+    if (action.Name == 'Tachi: Gekko') then
+        gFunc.EquipSet(sets.WS_Gekko)
+    end
 end
 
 profile.OnLoad = function()

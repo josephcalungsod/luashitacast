@@ -60,7 +60,7 @@ local sets = {
 
     VileElixir = {},
 }
-profile.Sets = gcmelee.AppendSets(sets)
+
 
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 5')
@@ -74,6 +74,7 @@ Everything below can be ignored.
 ]]
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 local pets = T{'sheep','lizard','crab','tiger','rabbit','mandy','flytrap'}
 
