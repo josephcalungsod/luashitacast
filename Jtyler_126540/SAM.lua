@@ -154,7 +154,6 @@ local sets = {
         Ear1 = 'Bushinomimi',
         Ear2 = 'Attila\'s earring',
         Body = 'Haubergeon',
-        Head = 'Optical Hat',
         Hands = 'Hachiman kote +1',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Toreador\'s Ring',
