@@ -173,10 +173,11 @@ local sets = {
     },
     Sing_March = {
         -- Range = 'Faerie Piccolo',
-        Range = 
+        -- Range = 
     },
     Sing_Madrigal = {
-        Range = 'Traversiere +2',
+        -- Range = 'Traversiere +2',
+        Range = 'Harp',
     },
     Sing_Elegy = {
         Range = 'Horn +1',
@@ -205,7 +206,8 @@ local sets = {
     Sing_SleepRecast = {
     },
     Sing_FinaleRequiem = {
-        Range = 'Hamelin Flute',
+        -- Range = 'Hamelin Flute',
+        Range = 'Flute +2',
         Main = 'Apollo\'s Staff',
     },
     Sing_Carol = {
@@ -218,7 +220,8 @@ local sets = {
         Range = 'Angel\'s Flute +1',
     },
     Sing_Threnody = {
-        Range = 'Sorrowful Harp',
+        -- Range = 'Sorrowful Harp',
+        Range = 'Piccolo +1',
         Neck = 'String Torque',
         Legs = 'Mahatma Slops',
     },

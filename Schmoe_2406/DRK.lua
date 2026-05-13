@@ -9,9 +9,9 @@ local fenrirs_stone = true
 
 -- Set to true if you have the obi
 local karin_obi = true
-local dorin_obi = false
-local suirin_obi = false
-local furin_obi = false
+local dorin_obi = true
+local suirin_obi = true
+local furin_obi = true
 local hyorin_obi = true
 local rairin_obi = true
 local korin_obi = true
