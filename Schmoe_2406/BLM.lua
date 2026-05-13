@@ -580,7 +580,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+gcmage = gFunc.LoadFile('Schmoe_2406\\common\\gcmage.lua')
 
 sets.warlocks_mantle = warlocks_mantle
 sets.republic_circlet = republic_circlet
