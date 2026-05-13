@@ -284,7 +284,7 @@ local sets = {
         Back = { Name = 'Gigant Mantle', Priority = 100 },
         Waist = 'Warwolf Belt', -- 3
         Legs = { Name = 'Hydra Brayettes', Priority = -100 }, -- 6
-        Legs = { Name = 'Hydra Sollerets', Priority = -100 }, -- 4
+        Feet = { Name = 'Hydra Sollerets', Priority = -100 }, -- 4
     },
 
     LockSet1 = {},
