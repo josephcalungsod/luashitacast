@@ -247,7 +247,7 @@ local WeakElementTable = {
     ['Dark'] = 'Light'
 }
 
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+gcmelee = gFunc.LoadFile('Jtyler_126540\\common\\gcmelee.lua')
 
 profile.HandleAbility = function()
     gFunc.EquipSet(sets.Hate)
