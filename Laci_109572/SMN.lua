@@ -346,7 +346,7 @@ local SmnMagical = T{'Searing Light','Meteorite','Holy Mist','Inferno','Fire II'
 local SmnEnfeebling = T{'Diamond Storm','Sleepga','Shock Squall','Slowga','Tidal Roar','Pavor Nocturnus','Ultimate Terror','Nightmare','Mewing Lullaby','Eerie Eye'}
 local SmnHybrid = T{'Flaming Crush','Burning Strike'}
 
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+gcmage = gFunc.LoadFile('Laci_109572\\common\\gcmage.lua')
 
 profile.HandleAbility = function()
     gcmage.DoAbility()
