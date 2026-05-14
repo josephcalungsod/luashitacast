@@ -12,10 +12,10 @@ local log_conquest = true
 local blm_advanced = false
 
 -- Set to true if you have both Dark Earring and Abyssal earring to turn off Diabolos's Earring override for Dark Magic sets
-local dark_and_abyssal_earrings = true
+local dark_and_abyssal_earrings = false
 
 -- Set to true if you wish to always use elemental staves or claustrum for Elemental DoTs.
-local use_staves_for_elemental_debuffs = true
+local use_staves_for_elemental_debuffs = false
 
 -- Set to 0 to 50 depending on the mp lost when using medicine ring or virology ring on IdleMaxMP set.
 local medicine_ring_mp_deficit = 50
@@ -27,74 +27,74 @@ local claustrum = {
 }
 
 local fire_staff = {
-    Main = 'Vulcan\'s Staff',
-    Sub = 'displaced',
+    -- Main = 'Vulcan\'s Staff',
+    -- Sub = 'displaced',
 }
 local earth_staff = {
-    Main = 'Terra\'s Staff',
-    Sub = 'displaced',
+    -- Main = 'Terra\'s Staff',
+    -- Sub = 'displaced',
 }
 local water_staff = {
-    Main = 'Neptune\'s Staff',
-    Sub = 'displaced',
+    -- Main = 'Neptune\'s Staff',
+    -- Sub = 'displaced',
 }
 local wind_staff = {
-    Main = 'Auster\'s Staff',
-    Sub = 'displaced',
+    -- Main = 'Auster\'s Staff',
+    -- Sub = 'displaced',
 }
 local ice_staff = {
-    Main = 'Aquilo\'s Staff',
-    Sub = 'displaced',
+    -- Main = 'Aquilo\'s Staff',
+    -- Sub = 'displaced',
 }
 local thunder_staff = {
-    Main = 'Jupiter\'s Staff',
-    Sub = 'displaced',
+    -- Main = 'Jupiter\'s Staff',
+    -- Sub = 'displaced',
 }
 local light_staff = {
-    Main = 'Apollo\'s Staff',
-    Sub = 'displaced',
+    -- Main = 'Apollo\'s Staff',
+    -- Sub = 'displaced',
 }
 local dark_staff = {
-    Main = 'Pluto\'s Staff',
-    Sub = 'displaced',
+    -- Main = 'Pluto\'s Staff',
+    -- Sub = 'displaced',
 }
 
 local karin_obi = {
-    Waist = 'Karin Obi',
+    -- Waist = 'Karin Obi',
 }
 local dorin_obi = {
-    Waist = 'Dorin Obi',
+    -- Waist = 'Dorin Obi',
 }
 local suirin_obi = {
-    Waist = 'Suirin Obi',
+    -- Waist = 'Suirin Obi',
 }
 local furin_obi = {
-    Waist = 'Furin Obi',
+    -- Waist = 'Furin Obi',
 }
 local hyorin_obi = {
-    Waist = 'Hyorin Obi',
+    -- Waist = 'Hyorin Obi',
 }
 local rairin_obi = {
-    Waist = 'Rairin Obi',
+    -- Waist = 'Rairin Obi',
 }
 local korin_obi = {
-    Waist = 'Korin Obi',
+    -- Waist = 'Korin Obi',
 }
 local anrin_obi = {
-    Waist = 'Anrin obi',
+    -- Waist = 'Anrin obi',
 }
 
 local uggalepih_pendant = {
-    Neck = 'Uggalepih Pendant',
+    -- Neck = 'Uggalepih Pendant',
 }
 local master_casters_bracelets = {
-    Hands = 'Mst.Cst. Bracelets',
+    -- Hands = 'Mst.Cst. Bracelets',
 }
 local wizards_mantle = {
-    Back = 'Wizard\'s Mantle',
+    -- Back = 'Wizard\'s Mantle',
 }
 local republic_gold_medal = { -- Note: Disabled for BRD
-    Neck = 'Rep.Gold Medal',
+    -- Neck = 'Rep.Gold Medal',
 }
 local diabolos_earring = { -- Forces usage of this for NukeACC, EnfeebleACC, and Dark Magic
     -- Ear2 = 'Diabolos\'s Earring',
