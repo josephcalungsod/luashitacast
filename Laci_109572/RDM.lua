@@ -688,7 +688,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+gcmage = gFunc.LoadFile('Laci_109572\\common\\gcmage.lua')
 
 profile.HandleAbility = function()
 end

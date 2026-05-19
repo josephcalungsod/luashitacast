@@ -503,7 +503,7 @@ local sets = {
 profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
@@ -516,7 +516,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+gcmage = gFunc.LoadFile('Jtyler_126540\\common\\gcmage.lua')
 
 profile.HandleAbility = function()
 end

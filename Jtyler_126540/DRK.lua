@@ -390,7 +390,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+gcmelee = gFunc.LoadFile('Jtyler_126540\\common\\gcmelee.lua')
 
 local NukeObiTable = {
     ['Fire'] = 'Karin Obi',

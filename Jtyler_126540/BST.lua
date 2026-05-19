@@ -73,7 +73,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+gcmelee = gFunc.LoadFile('Jtyler_126540\\common\\gcmelee.lua')
 profile.Sets = gcmelee.AppendSets(sets)
 
 local pets = T{'sheep','lizard','crab','tiger','rabbit','mandy','flytrap'}

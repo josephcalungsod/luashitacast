@@ -129,9 +129,9 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcinclude = gFunc.LoadFile('common\\gcinclude-rag.lua')
+gcinclude = gFunc.LoadFile('Laci_109572\\ommon\\gcinclude-rag.lua')
 
-blmAdvanced = gFunc.LoadFile('common\\BLM-advanced.lua')
+blmAdvanced = gFunc.LoadFile('Laci_109572\\common\\BLM-advanced.lua')
 
 local gcmage = {}
 

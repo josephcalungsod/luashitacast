@@ -17,7 +17,7 @@ local federation_aketon = {
     -- Body = 'Federation Aketon',
 }
 local ducal_aketon = {
-    Body = 'Ducal Aketon',
+    -- Body = 'Ducal Aketon',
 }
 local dream_boots = {
     Feet = 'Dream Boots +1',

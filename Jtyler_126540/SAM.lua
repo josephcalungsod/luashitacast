@@ -195,7 +195,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+gcmelee = gFunc.LoadFile('Jtyler_126540\\common\\gcmelee.lua')
 
 sets.myochin_kabuto = myochin_kabuto
 sets.saotome_kote = saotome_kote

@@ -572,7 +572,7 @@ profile.Sets = sets
 
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2')
 
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
     AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
@@ -584,7 +584,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcmage = gFunc.LoadFile('common\\gcmage.lua')
+gcmage = gFunc.LoadFile('Laci_109572\\common\\gcmage.lua')
 
 sets.warlocks_mantle = warlocks_mantle
 sets.republic_circlet = republic_circlet
