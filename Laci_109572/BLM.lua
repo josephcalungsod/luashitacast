@@ -13,13 +13,13 @@ local warlocks_mantle = { -- Don't add 2% to fastCastValue for this as it is SJ 
     Back = 'Warlock\'s Mantle',
 }
 local republic_circlet = {
-    -- Head = 'Republic Circlet',
+    Head = 'Republic Circlet',
 }
 local opuntia_hoop = {
     -- Ring1 = 'Opuntia Hoop',
 }
 local diabolos_pole = {
-    Main = 'Diabolos\'s Pole',
+    -- Main = 'Diabolos\'s Pole',
 }
 local sorcerers_ring = {
     Ring1 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring to work as well in gcmage.lua
