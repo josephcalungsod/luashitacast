@@ -25,7 +25,8 @@ local sorcerers_ring = {
     Ring1 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring to work as well in gcmage.lua
 }
 local sorcerers_tonban = {
-    Legs = 'Src. Tonban +1',
+    -- Legs = 'Src. Tonban +1',
+    Legs = 'Sorcerer\'s Tonban',
 }
 
 -- Disabled on horizon_safe_mode
@@ -506,7 +507,7 @@ local sets = {
         Feet = 'Src. Sabots +1',
     },
     NukeACC = {
-        Head = 'Src. Petasos',
+        Head = 'Sorcerer\'s Petasos',
         Neck = 'Elemental Torque',
         Hands = 'Wizard Gloves',
         Back = 'Merciful Cape',
