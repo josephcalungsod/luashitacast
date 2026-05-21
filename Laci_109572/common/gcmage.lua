@@ -129,7 +129,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcinclude = gFunc.LoadFile('Laci_109572\\ommon\\gcinclude-rag.lua')
+gcinclude = gFunc.LoadFile('Laci_109572\\common\\gcinclude-rag.lua')
 
 blmAdvanced = gFunc.LoadFile('Laci_109572\\common\\BLM-advanced.lua')
 
