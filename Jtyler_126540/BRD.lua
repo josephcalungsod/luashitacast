@@ -174,11 +174,11 @@ local sets = {
     },
     Sing_March = {
         -- Range = 'Faerie Piccolo',
-        -- Range = 
+        Range = 'Ryl.Spr. Horn',
     },
     Sing_Madrigal = {
-        -- Range = 'Traversiere +2',
-        Range = 'Harp',
+        Range = 'Traversiere +2',
+        -- Range = 'Harp',
     },
     Sing_Elegy = {
         Range = 'Horn +1',
