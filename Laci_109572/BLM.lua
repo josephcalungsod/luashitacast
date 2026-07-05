@@ -4,7 +4,7 @@ local fastCastValue = 0.04 -- 4% from gear listed in Precast set
 
 local ninSJMaxMP = 640 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 1030 -- The Max MP you have when /whm in your idle set
-local rdmSJMaxMP = 923 -- The Max MP you have when /rdm in your idle set
+local rdmSJMaxMP = 1093 -- The Max MP you have when /rdm in your idle set
 
 local nukeExtraThreshold = 850 -- The minimum MP for which NukeExtra and StoneskinExtra set will be used instead of regular sets (to allow additional nukes using max mp sets)
 
@@ -22,7 +22,7 @@ local diabolos_pole = {
     -- Main = 'Diabolos\'s Pole',
 }
 local sorcerers_ring = {
-    Ring1 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring to work as well in gcmage.lua
+    Ring2 = 'Sorcerer\'s Ring', -- This is Ring1 instead of Ring2 to allow Ice Ring to work as well in gcmage.lua
 }
 local sorcerers_tonban = {
     -- Legs = 'Src. Tonban +1',
@@ -52,7 +52,7 @@ local sets = {
     Idle = {
         Main = 'Terra\'s Staff',
         Ammo = 'Phtm. Tathlum',
-        -- Head = 'Sorcerer\'s Petas.',        
+        Head = 'Sorcerer\'s Petas.',        
         Neck = 'Elemental Torque',
         Ear1 = 'Novio Earring',
         Ear2 = 'Moldavite Earring',
@@ -105,8 +105,8 @@ local sets = {
     },
     Town = {
         Main = 'Jupiter\'s Staff',
-        Head = 'Sorcerer\'s Petas.',
-        -- Head = 'Zenith Crown',
+        -- Head = 'Sorcerer\'s Petas.',
+        Head = 'Zenith Crown',
         Body = 'Sorcerer\'s Coat',
         -- Body = 'Demon\'s Cloak',
         Hands = 'Zenith Mitts',
@@ -361,20 +361,20 @@ local sets = {
         Feet = { Name = 'Errant Pigaches', Priority = 100 },
     },
     StoneskinExtra = {
-        Main = 'Kirin\'s Pole',
-        Ammo = 'Hedgehog Bomb',
-        Head = 'Zenith Crown',
-        Neck = 'Stone Gorget',
-        Ear1 = 'Loquac. Earring',
-        Ear2 = 'Cmn. Earring',
-        Body = 'Errant Hpl.',
-        Hands = 'Dvt. Mitts +1',
-        Ring1 = 'Aqua Ring',
-        Ring2 = 'Sapphire Ring',
-        Back = 'Errant Cape',
-        Waist = 'Hierarch Belt',
-        Legs = 'Mahatma Slops',
-        Feet = 'Errant Pigaches',
+    --     Main = 'Kirin\'s Pole',
+    --     Ammo = 'Hedgehog Bomb',
+    --     Head = 'Zenith Crown',
+    --     Neck = 'Stone Gorget',
+    --     Ear1 = 'Loquac. Earring',
+    --     Ear2 = 'Cmn. Earring',
+    --     Body = 'Errant Hpl.',
+    --     Hands = 'Dvt. Mitts +1',
+    --     Ring1 = 'Aqua Ring',
+    --     Ring2 = 'Sapphire Ring',
+    --     Back = 'Errant Cape',
+    --     Waist = 'Hierarch Belt',
+    --     Legs = 'Mahatma Slops',
+    --     Feet = 'Errant Pigaches',
     },
     Spikes = {
         Main = 'Kirin\'s Pole',
@@ -412,10 +412,11 @@ local sets = {
     },
     EnfeeblingINT = {
         Ammo = 'Phtm. Tathlum',
-        Ear1 = 'Phtm. Earring +1',
-        -- Ear1 = 'Morion Earring +1',
+        -- Ear1 = 'Phtm. Earring +1',
+        Ear1 = 'Morion Earring +1',
         Ear2 = 'Abyssal Earring',
         Hands = 'Errant Cuffs',
+        -- Hands = 'MCBs',
         -- Ring1 = 'Tamas Ring',
         Ring1 = 'Tamas Ring',
         Ring2 = 'Snow Ring',
