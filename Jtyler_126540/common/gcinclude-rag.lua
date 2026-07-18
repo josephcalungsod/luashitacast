@@ -8,7 +8,7 @@ local toggleDisplayHeadOnAbility = false
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
 local kingdom_aketon = {
-    -- Body = 'Kingdom Aketon',
+    Body = 'Kingdom Aketon',
 }
 local republic_aketon = {
     -- Body = 'Republic Aketon',
