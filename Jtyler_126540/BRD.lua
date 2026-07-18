@@ -173,8 +173,8 @@ local sets = {
         Range = 'Cornette +2',
     },
     Sing_March = {
-        -- Range = 'Faerie Piccolo',
-        Range = 'Ryl.Spr. Horn',
+        Range = 'Faerie Piccolo',
+        -- Range = 'Ryl.Spr. Horn',
     },
     Sing_Madrigal = {
         Range = 'Traversiere +2',
