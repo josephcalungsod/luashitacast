@@ -8,6 +8,8 @@ local fastCastValue = 0.02 -- 0% from gear
 
 -- local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+
 local shinobi_ring = true
 local shinobi_ring_slot = 'Ring2'
 
