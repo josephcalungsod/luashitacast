@@ -2,6 +2,8 @@ local profile = {}
 
 local fastCastValue = 0.42 -- 20% from traits 22% from gear listed in Precast set
 
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+
 local ninSJMaxMP = 914 -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = 992 -- The Max MP you have when /whm in your idle set
 local blmSJMaxMP = 937 -- The Max MP you have when /blm in your idle set
@@ -689,6 +691,8 @@ Everything below can be ignored.
 ]]
 
 gcmage = gFunc.LoadFile('Jtyler_126540\\common\\gcmage.lua')
+
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
 end

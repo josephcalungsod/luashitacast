@@ -2,6 +2,8 @@ local profile = {}
 
 local fastCastValue = 0.07 -- 7% from gear
 
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+
 local use_chaos_burgeonet_for_tp_during_souleater = true
 
 local parade_gorget = true
@@ -391,6 +393,8 @@ Everything below can be ignored.
 ]]
 
 gcmelee = gFunc.LoadFile('Jtyler_126540\\common\\gcmelee.lua')
+
+profile.Sets = gcmelee.AppendSets(sets)
 
 local NukeObiTable = {
     ['Fire'] = 'Karin Obi',

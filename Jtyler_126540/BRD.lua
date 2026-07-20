@@ -3,6 +3,8 @@ local profile = {}
 local fastCastValue = 0.00 -- Only include Fast Cast e.g. Loquacious Earring, Rostrum Pumps
 local fastCastValueSong = 0.37 -- Only include Song Spellcasting Time e.g. Minstrel's Ring, Sha'ir Manteel
 
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+
 local ninSJMaxMP = nil -- The Max MP you have when /nin in your idle set
 local whmSJMaxMP = nil -- The Max MP you have when /whm in your idle set
 local rdmSJMaxMP = nil -- The Max MP you have when /rdm in your idle set
@@ -304,6 +306,8 @@ Everything below can be ignored.
 ]]
 
 gcmage = gFunc.LoadFile('Jtyler_126540\\common\\gcmage.lua')
+
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
 end

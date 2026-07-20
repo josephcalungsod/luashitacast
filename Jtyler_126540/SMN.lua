@@ -2,6 +2,8 @@ local profile = {}
 
 local fastCastValue = 0.02 -- 4% from gear not including carbuncles cuffs or evokers boots
 
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+
 local carbuncles_cuffs = false
 local evokers_boots = false
 
@@ -347,6 +349,8 @@ local SmnEnfeebling = T{'Diamond Storm','Sleepga','Shock Squall','Slowga','Tidal
 local SmnHybrid = T{'Flaming Crush','Burning Strike'}
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
+
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmage.DoAbility()

@@ -2,6 +2,8 @@ local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
 
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+
 local ta_rogue_armlets = true
 
 local sets = {
@@ -74,6 +76,8 @@ local saOverride = 0
 local taOverride = 0
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
     local action = gData.GetAction()

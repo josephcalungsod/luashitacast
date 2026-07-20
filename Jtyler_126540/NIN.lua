@@ -6,6 +6,8 @@ local profile = {}
 
 local fastCastValue = 0.02 -- 0% from gear
 
+local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
+
 -- local warlocks_mantle = true -- Don't add 2% to fastCastValue to this as it is SJ dependant
 
 local shinobi_ring = true
@@ -248,6 +250,8 @@ local WeakElementTable = {
 }
 
 gcmelee = gFunc.LoadFile('Jtyler_126540\\common\\gcmelee.lua')
+
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
     gFunc.EquipSet(sets.Hate)
