@@ -181,6 +181,10 @@ local sets = {
     WS_BladeJin = {},
     WS_BladeKu = {},
 
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
+
     Ranged = {}, -- This won't work for automatically swapping shurikens, only other equipment
 }
 profile.Sets = sets
@@ -313,7 +317,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmelee.DoDefault()
+    gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()

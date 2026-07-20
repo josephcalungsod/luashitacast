@@ -66,6 +66,10 @@ local sets = {
     ['Impulse Drive'] = {},
     ['Skewer'] = {},
     ['Geirskogul'] = {},
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 profile.Sets = sets
 
@@ -155,7 +159,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmelee.DoDefault()
+    gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     local player = gData.GetPlayer()
     local isWHM = player.SubJob == 'WHM'
