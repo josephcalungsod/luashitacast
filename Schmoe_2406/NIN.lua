@@ -187,6 +187,10 @@ local sets = {
     WS_BladeKu = {},
 
     Ranged = {}, -- This won't work for automatically swapping shurikens, only other equipment
+
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 profile.Sets = sets
 
@@ -255,6 +259,7 @@ local WeakElementTable = {
 }
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 profile.HandleAbility = function()
     gFunc.EquipSet(sets.Hate)
@@ -320,7 +325,7 @@ profile.HandleCommand = function(args)
 end
 
 profile.HandleDefault = function()
-    gcmelee.DoDefault()
+    gcmelee.DoDefault(max_hp_in_idle_with_regen_gear_equipped)
 
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
