@@ -10,55 +10,75 @@ local shinobiRingForced = true -- Default /sring value
 local shinobiRingMaxHP = 1000
 
 -- Comment out the equipment within these sets if you do not have them or do not wish to use them
-local fire_staff = {
-    Main = 'Vulcan\'s Staff',
-}
-local earth_staff = {
-    Main = 'Terra\'s Staff',
-}
-local water_staff = {
-    Main = 'Neptune\'s Staff',
-}
-local wind_staff = {
-    Main = 'Auster\'s Staff',
-}
-local ice_staff = {
-    Main = 'Aquilo\'s Staff',
-}
-local thunder_staff = {
-    Main = 'Jupiter\'s Staff',
-}
-local light_staff = {
-    Main = 'Apollo\'s Staff',
-}
-local dark_staff = {
-    Main = 'Pluto\'s Staff',
-}
+-- local fire_staff = {
+--     Main = 'Vulcan\'s Staff',
+-- }
+-- local earth_staff = {
+--     Main = 'Terra\'s Staff',
+-- }
+-- local water_staff = {
+--     Main = 'Neptune\'s Staff',
+-- }
+-- local wind_staff = {
+--     Main = 'Auster\'s Staff',
+-- }
+-- local ice_staff = {
+--     Main = 'Aquilo\'s Staff',
+-- }
+-- local thunder_staff = {
+--     Main = 'Jupiter\'s Staff',
+-- }
+-- local light_staff = {
+--     Main = 'Apollo\'s Staff',
+-- }
+-- local dark_staff = {
+--     Main = 'Pluto\'s Staff',
+-- }
 
-local karin_obi = {
-    Waist = 'Karin Obi',
-}
-local dorin_obi = {
-    -- Waist = 'Dorin Obi',
-}
-local suirin_obi = {
-    -- Waist = 'Suirin Obi',
-}
-local furin_obi = {
-    -- Waist = 'Furin Obi',
-}
-local hyorin_obi = {
-    Waist = 'Hyorin Obi',
-}
-local rairin_obi = {
-    Waist = 'Rairin Obi',
-}
-local korin_obi = {
-    Waist = 'Korin Obi',
-}
-local anrin_obi = {
-    Waist = 'Anrin obi',
-}
+-- Leave as '' if you do not have the staff.
+local fire_staff = 'Vulcan\'s Staff'
+local earth_staff = 'Terra\'s Staff'
+local water_staff = 'Neptune\'s Staff'
+local wind_staff = 'Auster\'s Staff'
+local ice_staff = 'Aquilo\'s Staff'
+local thunder_staff = 'Jupiter\'s Staff'
+local light_staff = 'Apollo\'s Staff'
+local dark_staff = 'Pluto\'s Staff'
+
+-- Set to true if you have the obi
+local karin_obi = true
+local dorin_obi = true
+local suirin_obi = true
+local furin_obi = true
+local hyorin_obi = true
+local rairin_obi = true
+local korin_obi = true
+local anrin_obi = true
+
+-- local karin_obi = {
+--     Waist = 'Karin Obi',
+-- }
+-- local dorin_obi = {
+--     -- Waist = 'Dorin Obi',
+-- }
+-- local suirin_obi = {
+--     -- Waist = 'Suirin Obi',
+-- }
+-- local furin_obi = {
+--     -- Waist = 'Furin Obi',
+-- }
+-- local hyorin_obi = {
+--     Waist = 'Hyorin Obi',
+-- }
+-- local rairin_obi = {
+--     Waist = 'Rairin Obi',
+-- }
+-- local korin_obi = {
+--     Waist = 'Korin Obi',
+-- }
+-- local anrin_obi = {
+--     Waist = 'Anrin obi',
+-- }
 
 local shinobi_ring = {
     Ring2 = 'Shinobi Ring',
