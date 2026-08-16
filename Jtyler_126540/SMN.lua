@@ -350,7 +350,7 @@ local SmnHybrid = T{'Flaming Crush','Burning Strike'}
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
-profile.Sets = gcmelee.AppendSets(sets)
+profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
     gcmage.DoAbility()

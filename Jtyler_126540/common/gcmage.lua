@@ -27,35 +27,35 @@ local claustrum = {
 }
 
 local fire_staff = {
-    -- Main = 'Vulcan\'s Staff',
+    Main = 'Vulcan\'s Staff',
     -- Sub = 'displaced',
 }
 local earth_staff = {
-    -- Main = 'Terra\'s Staff',
+    Main = 'Terra\'s Staff',
     -- Sub = 'displaced',
 }
 local water_staff = {
-    -- Main = 'Neptune\'s Staff',
+    Main = 'Neptune\'s Staff',
     -- Sub = 'displaced',
 }
 local wind_staff = {
-    -- Main = 'Auster\'s Staff',
+    Main = 'Auster\'s Staff',
     -- Sub = 'displaced',
 }
 local ice_staff = {
-    -- Main = 'Aquilo\'s Staff',
+    Main = 'Aquilo\'s Staff',
     -- Sub = 'displaced',
 }
 local thunder_staff = {
-    -- Main = 'Jupiter\'s Staff',
+    Main = 'Jupiter\'s Staff',
     -- Sub = 'displaced',
 }
 local light_staff = {
-    -- Main = 'Apollo\'s Staff',
+    Main = 'Apollo\'s Staff',
     -- Sub = 'displaced',
 }
 local dark_staff = {
-    -- Main = 'Pluto\'s Staff',
+    Main = 'Pluto\'s Staff',
     -- Sub = 'displaced',
 }
 

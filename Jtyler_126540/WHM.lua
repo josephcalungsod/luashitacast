@@ -93,7 +93,7 @@ Everything below can be ignored.
 
 gcmage = gFunc.LoadFile('common\\gcmage.lua')
 
-profile.Sets = gcmelee.AppendSets(sets)
+profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
 end

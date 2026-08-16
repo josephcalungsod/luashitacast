@@ -189,7 +189,8 @@ local sets = {
     Sing_Lullaby = {
         -- Range = 'Nursemaid\'s Harp',
         Range = 'Mary\'s Horn',
-        Main = 'Apollo\'s Staff',
+        -- Main = 'Apollo\'s Staff',
+        Main = 'Light Staff',
         Legs = 'Mahatma Slops',
     },
     Sing_HordeLullaby_Large = {
@@ -275,6 +276,7 @@ local sets = {
     EnfeeblingACC = {},
 
     Divine = {},
+    Banish = {},
     Dark = {},
 
     Nuke = {},
@@ -291,8 +293,23 @@ local sets = {
     TP_Mjollnir_Haste = {},
     WS = {},
     WS_HighAcc = {},
+    Weapon_Loadout_1 = {
+		-- Main = 'Octave Club',
+        -- -- Main = 'Blau Dolch',
+		-- Sub = 'Genbu\'s Shield',
+        -- -- Do not place a Ranged weapon or Ammo in these slots or instrument switching will be disabled entirely
+        -- Ammo = 'displaced',
+    },
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {
+        Ammo = 'Pebble',
+    },
+
+    VileElixir = {},
 }
-profile.Sets = sets
+-- profile.Sets = sets
 
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 13')
@@ -307,8 +324,9 @@ Everything below can be ignored.
 
 gcmage = gFunc.LoadFile('Jtyler_126540\\common\\gcmage.lua')
 
-profile.Sets = gcmelee.AppendSets(sets)
-
+sets.warlocks_mantle = warlocks_mantle
+sets.gaudy_harness = gaudy_harness
+profile.Sets = gcmage.AppendSets(sets)
 profile.HandleAbility = function()
 end
 
@@ -317,9 +335,11 @@ profile.HandleItem = function()
 end
 
 profile.HandlePreshot = function()
+    gcmage.DoPreshot(sets.Preshot, gFunc.Combine(sets.Preshot, sets.Ranged), snapShotValue)
 end
 
 profile.HandleMidshot = function()
+    gcmage.DoMidshot(sets, gFunc.Combine(sets.Preshot, sets.Ranged))
 end
 
 profile.HandleWeaponskill = function()
@@ -334,7 +354,7 @@ profile.OnLoad = function()
     gcinclude.SetAlias(T{'sballad','shorde','srecast'})
     gcdisplay.CreateToggle('SmallBallad', false)
     gcdisplay.CreateToggle('SmallHorde', false)
-    gcdisplay.CreateToggle('SleepRecast', false)
+    gcdisplay.CreateToggle('SleepRecast', true)
     gcmage.Load()
     profile.SetMacroBook()
 end
@@ -355,13 +375,14 @@ profile.HandleCommand = function(args)
         gcdisplay.AdvanceToggle('SleepRecast')
         gcinclude.Message('SleepRecast', gcdisplay.GetToggle('SleepRecast'))
     else
-        gcmage.DoCommands(args)
+        gcmage.DoCommands(args, sets)
     end
 
     if (args[1] == 'horizonmode') then
         profile.HandleDefault()
     end
 end
+local MPJobs = T{ 'RDM','BLM','WHM','SMN' }
 
 profile.HandleDefault = function()
     gcmage.DoDefault(ninSJMaxMP, whmSJMaxMP, blmSJMaxMP, rdmSJMaxMP, nil)
@@ -403,7 +424,7 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.Sing_Debuff)
             gFunc.EquipSet(sets.Sing_Lullaby)
             if (gcdisplay.GetToggle('SleepRecast')) then
-                gFunc.EquipSet(sets.Sing_SleepRecast)
+                gFunc.EquipSet(sets.Sing_Recast)
             end
         elseif string.match(action.Name, 'Horde Lullaby') then
             gFunc.EquipSet(sets.Sing_Debuff)

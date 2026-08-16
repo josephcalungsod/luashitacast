@@ -376,6 +376,14 @@ local sets = {
     Absorb = {
         Ring2 = 'Snow Ring',
     },
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
+    Movement_TP = {
+        Hands = 'Homam Manopolas',
+        Legs = 'Blood Cuisses',
+    },
+
 }
 profile.Sets = sets
 
@@ -394,6 +402,8 @@ Everything below can be ignored.
 ]]
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+
+profile.Sets = gcmelee.AppendSets(sets)
 
 local NukeObiTable = {
     ['Fire'] = 'Karin Obi',

@@ -37,7 +37,7 @@ local sorcerers_earring = { -- 1440
     -- Head = 'Genie Tiara',
     -- Neck = 'Pch. Collar',
     -- Ear1 = 'Cassie Earring',
-    -- Ear1 = 'Sorcerer\'s Earring',
+    Ear1 = 'Sorcerer\'s Earring',
     -- Body = 'Src. Coat +1',
     -- Hands = 'Garden Bangles',
     -- Ring1 = 'Bomb Queen Ring',
@@ -99,7 +99,7 @@ local sets = {
         Back = 'Prism Cape',
         Waist = 'Hierarch Belt',
         Legs = 'Baron\'s Slops',
-        Feet = 'Rostrum Pumps',
+        Feet = 'Hydra Gaiters',
     },
     Town = {
         Main = 'Jupiter\'s Staff',
@@ -112,6 +112,7 @@ local sets = {
     Movement = {
         Feet = 'Herald\'s Gaiters',
     },
+    Movement_TP = {},
 
     DT = {
         Main = 'Terra\'s Staff',
@@ -382,6 +383,23 @@ local sets = {
         -- Legs = 'Mahatma Slops',
         -- Feet = 'Errant Pigaches',
     },
+    PhalanxExtra = {
+        -- Main = 'Eremite\'s Wand',
+        -- Sub = 'Genbu\'s Shield',
+        -- Ammo = 'Hedgehog Bomb',
+        -- Head = 'Zenith Crown +1',
+        -- Neck = 'Enhancing Torque',
+        -- Ear1 = 'Loquac. Earring',
+        -- Ear2 = 'Magnetic Earring',
+        -- Body = 'Hydra Doublet',
+        -- Hands = 'Src. Gloves +1',
+        -- Ring1 = 'Aqua Ring',
+        -- Ring2 = 'Communion Ring',
+        -- Back = 'Merciful Cape',
+        -- Waist = 'Hierarch Belt',
+        -- Legs = 'Src. Tonban +1',
+        -- Feet = 'Src. Sabots +1',
+    },
     Spikes = {
         Main = 'Kirin\'s Pole',
         Ammo = 'Phtm. Tathlum',
@@ -405,6 +423,8 @@ local sets = {
         Body = 'Wzd. Coat +1',
         Back = 'Altruistic Cape',
         Legs = 'Igqira Lappas',
+        -- Hands = 'Nashira Gages',
+        -- Feet = 'Nashira Crackows',
     },
     EnfeeblingMND = {
         Ammo = 'Hedgehog Bomb',
@@ -435,6 +455,7 @@ local sets = {
     },
 
     Divine = {},
+    Banish = {},
     Dark = {
         Ammo = 'Phtm. Tathlum',
         Head = 'Nashira Turban',
@@ -543,10 +564,20 @@ local sets = {
     --     Feet = 'Src. Sabots +1',
     -- },
     MB = {
-        -- Ammo = 'Dream Sand',
+        Ammo = 'Dream Sand',
         Ear2 = 'Static Earring',
         Hands = 'Sorc. Gloves +1',
     },
+    MBHNM = {
+        -- Hands = 'Wzd. Gloves +1',
+        -- Back = 'Mahatma Cape',
+    },
+    Preshot = {}, -- This set is pointless until ToAU+ when Snapshot on equipment is available
+    Ranged = {
+        -- Ammo = 'Pebble',
+    },
+
+    VileElixir = {},
 
     LockSet1 = { -- 40 Cap
         Main = 'Solid Wand',
@@ -567,14 +598,14 @@ local sets = {
     LockSet2 = {},
     LockSet3 = {},
 }
-profile.Sets = sets
+-- profile.Sets = sets
 
 profile.SetMacroBook = function()
     AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
-    AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
+    -- AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //stun')
+    -- AshitaCore:GetChatManager():QueueCommand(-1, '/bind F10 //dia')
 end
 
 --[[

@@ -692,7 +692,7 @@ Everything below can be ignored.
 
 gcmage = gFunc.LoadFile('Jtyler_126540\\common\\gcmage.lua')
 
-profile.Sets = gcmelee.AppendSets(sets)
+profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
 end

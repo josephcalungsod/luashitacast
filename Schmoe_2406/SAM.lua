@@ -61,6 +61,9 @@ local sets = {
     WS_HighAcc = {},
 
     WS_Kaiten = {},
+    Weapon_Loadout_1 = {},
+    Weapon_Loadout_2 = {},
+    Weapon_Loadout_3 = {},
 }
 profile.Sets = sets
 
@@ -76,6 +79,7 @@ Everything below can be ignored.
 ]]
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
+profile.Sets = gcmelee.AppendSets(sets)
 
 sets.myochin_kabuto = myochin_kabuto
 sets.saotome_kote = saotome_kote
