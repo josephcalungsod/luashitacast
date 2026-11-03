@@ -6,7 +6,22 @@ local special_ammo = "Carapace Bullet"
 local max_hp_in_idle_with_regen_gear_equipped = 0 -- You could set this to 0 if you do not wish to ever use regen gear
 
 local sets = {
-    Idle = {},
+    Idle = {
+        Head = 'Hunter\'s Beret',
+        -- Neck = 'Peacock Amulet',
+        Neck = 'Ranger\'s necklace',
+        Ear1 = 'Drone Earring',
+        Ear2 = 'Genin Earring',
+        Body = 'Irn.Msk.Gmbsn. +1',
+        Hands = 'Noct gloves +1',
+        Ring1 = 'Sniper\'s Ring',
+        Ring2 = 'Crossbowman Ring',
+        -- Back = 'Amemet mantle +1',
+        Back = 'Sniper\'s Mantle',
+        Waist = 'R.K. Belt +2',
+        Legs = 'Noct Brais +1',
+        Feet = 'Leaping Boots',
+    },
     IdleALT = {},
     Resting = {},
     Town = {},
@@ -39,18 +54,50 @@ local sets = {
     TP_HighAcc = {},
     TP_Mjollnir_Haste = {},
 
-    Ranged_ACC = {},
-    Ranged_ATK = {},
+    Ranged_ACC = {
+        Head = 'Hunter\'s Beret',
+        -- Neck = 'Peacock Amulet',
+        Neck = 'Ranger\'s necklace',
+        Ear1 = 'Drone Earring',
+        Ear2 = 'Genin Earring',
+        Body = 'Irn.Msk.Gmbsn. +1',
+        Hands = 'Noct gloves +1',
+        Ring1 = 'Sniper\'s Ring',
+        Ring2 = 'Crossbowman\'s ring',
+        -- Back = 'Amemet mantle +1',
+        Back = 'Sniper\'s Mantle',
+        Waist = 'Royal Knight\'s belt +2',
+        Legs = 'Noct Brais +1',
+        Feet = 'Leaping Boots',
+    },
+    Ranged_ATK = {
+        Head = 'Hunter\'s Beret',
+        Neck = 'Peacock Amulet',
+        Ear1 = 'Drone Earring',
+        Ear2 = 'Genin Earring',
+        Body = 'Iron Musketeer\'s Gambison +1',
+        Hands = 'Noct gloves +1',
+        Ring1 = 'Sniper\'s Ring',
+        Ring2 = 'Crossbowman\'s Ring',
+        Back = 'Amemet mantle +1',
+        Waist = 'Royal Knight\'s belt +2',
+        Legs = 'Noct Brais +1',
+        Feet = 'Leaping Boots',
+    },
 
     EagleEyeShot = {},
 
     EnmityDown = {},
 
     Barrage = {},
-    Scavenge = {},
+    Scavenge = {
+        Feet = 'Hunter\'s Socks',
+    },
     Shadowbind = {},
     Camouflage = {},
-    Sharpshot = {},
+    Sharpshot = {
+        Legs = 'Hunter\'s Braccae',
+    },
     UnlimitedShot = {},
 
     WS = {},

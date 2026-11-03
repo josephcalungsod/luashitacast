@@ -689,6 +689,7 @@ Everything below can be ignored.
 ]]
 
 gcmage = gFunc.LoadFile('Laci_109572\\common\\gcmage.lua')
+profile.Sets = gcmage.AppendSets(sets)
 
 profile.HandleAbility = function()
 end
